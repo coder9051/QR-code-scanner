@@ -26,8 +26,19 @@ A QR code object returned by pyzar has three fields
 * **Location**: This is a collection of points that locate the code. For QR codes, it is a list of four points corresponding to the four corners of the QR code quad.
 
 ## Python Code
+Decode QR Code Using QR Code Image
 ```python
-I will add it soon...
+import cv2
+qr_img = cv2.imread("/content/Create_qr_code.png")
+
+# using the QRCodeDetector() function detect the qr code  
+qr_det = cv2.QRCodeDetector()
+
+# using the detectAndDecode() function  
+val, pts, st_code = qr_det.detectAndDecode(qr_img)
+
+# printing the value  print("Information:", val)
+print(val)
 ```
 
 ## Explanation
