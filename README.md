@@ -71,15 +71,9 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 ```
-
-## Explanation
-For Python, we use pyzbar, which has a simple decode function to locate and decode all symbols in the image. The decode function simply warps pyzbar’s decode function and loops over the located barcodes and QR codes and prints the data.
-
-The decoded symbols from the previous step are passed on to the display function. If the points form a quad ( e.g. in a QR code ), we simply draw the quad. If the location is not a quad, we draw the outer boundary of all the points ( also called the convex hull ) of all the points. This is done using OpenCV function called cv2.convexHull.
-
-Finally, the main function simply reads an image, decodes it and displays the result.
+When you execute this code, your webcam will be automatically opened. Simply hold the QR code in front of the webcam and the data will be decoded and displayed in the command prompt.
 
 ## Conclusion
-There are many tools that read QR codes. However, I used OpenCV for this, as it is popular and easy to integrate with the webcam or any video.
+There are many tools that read QR codes. However, I used OpenCV for this, as it is popular and easy to integrate with the webcam or any video. You can even create a complete QR code Scanner-Generator application using the code provided.
 
 Finally, many of the Python concepts aren't discussed in detail here, if you feel you want to dig more into Python.
